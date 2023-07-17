@@ -22,7 +22,7 @@ MAIN-LOGIC.
     DISPLAY "2. Subtração".
     DISPLAY "3. Multiplicação".
     DISPLAY "4. Divisão".
-    DISPLAY "5. Sair".
+    DISPLAY "5. Saiir".
 
     ACCEPT OPCAO.
 
