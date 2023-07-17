@@ -1,0 +1,47 @@
+IDENTIFICATION DIVISION.
+PROGRAM-ID. CALCULADORA.
+
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+01 NUMERO1 PIC 9(5).
+01 NUMERO2 PIC 9(5).
+01 RESULTADO PIC 9(6).
+01 OPCAO PIC X.
+
+PROCEDURE DIVISION.
+MAIN-LOGIC.
+    DISPLAY "CALCULADORA".
+    DISPLAY "Digite o primeiro número: ".
+    ACCEPT NUMERO1.
+
+    DISPLAY "Digite o segundo número: ".
+    ACCEPT NUMERO2.
+
+    DISPLAY "Escolha uma operação: ".
+    DISPLAY "1. Soma".
+    DISPLAY "2. Subtração".
+    DISPLAY "3. Multiplicação".
+    DISPLAY "4. Divisão".
+    DISPLAY "5. Sair".
+
+    ACCEPT OPCAO.
+
+    PERFORM CALCULADORA-LOGIC UNTIL OPCAO = '5'.
+
+    STOP RUN.
+
+CALCULADORA-LOGIC.
+    EVALUATE OPCAO
+        WHEN '1'
+            ADD NUMERO1, NUMERO2 GIVING RESULTADO
+        WHEN '2'
+            SUBTRACT NUMERO2 FROM NUMERO1 GIVING RESULTADO
+        WHEN '3'
+            MULTIPLY NUMERO1 BY NUMERO2 GIVING RESULTADO
+        WHEN '4'
+            DIVIDE NUMERO1 BY NUMERO2 GIVING RESULTADO
+        WHEN '5'
+            DISPLAY "Saindo da calculadora..."
+        WHEN OTHER
+            DISPLAY "Opção inválida. Tente novamente."
+    END-EVALUATE.
